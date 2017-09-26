@@ -1,0 +1,4 @@
+#%PAM-1.0
+auth    required pam_sqlite.so config_file=/etc/pam_sqlite.conf
+account required pam_sqlite.so config_file=/etc/pam_sqlite.conf
+session required pam_sqlite.so config_file=/etc/pam_sqlite.conf
