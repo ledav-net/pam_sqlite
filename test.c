@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    retval = pam_start("sqlite", user, &conv, &pamh);
+    retval = pam_start("vsftpd-ftpadmin", user, &conv, &pamh);
 
     if(retval == PAM_SUCCESS)
         printf("PAM started.\n");
