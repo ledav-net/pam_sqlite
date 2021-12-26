@@ -790,12 +790,12 @@ PAM_EXTERN int
 pam_sm_open_session(pam_handle_t *pamh, int flags, int argc, const char **argv)
 {
 	struct		module_options *options;
-	int 		rc, res, std_flags;
+	int 		rc, res;
 	const char 	*user;
 	sqlite3		*conn;
 	char		*query, *errtext = NULL;
 	                        
-	std_flags = get_module_options(argc, argv, &options);
+	get_module_options(argc, argv, &options);
 	if(options_valid(options) != 0) {
 		free_module_options(options);
 		return PAM_SESSION_ERR;
@@ -841,12 +841,12 @@ PAM_EXTERN int
 pam_sm_close_session(pam_handle_t *pamh, int flags, int argc, const char **argv)
 {
 	struct		module_options *options;
-	int 		rc, res, std_flags;
+	int 		rc, res;
 	const char 	*user;
 	sqlite3		*conn;
 	char		*query, *errtext = NULL;
 	                        
-	std_flags = get_module_options(argc, argv, &options);
+	get_module_options(argc, argv, &options);
 	if(options_valid(options) != 0) {
 		free_module_options(options);
 		return PAM_SESSION_ERR;
